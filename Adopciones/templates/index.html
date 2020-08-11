@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block head %}  
+{% load staticfiles %}
+    <title>Adopciones</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css'%}">
+    <script src="js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+{% endblock %}
+{% block body %}
+    <h1 class="titulo">No eres tú, soy yo</h1>
+    <div class="botones">
+        <a href="{{url.get_adoptar_url}}">Adoptar</a>
+        <a href="{{ url.get_usuario_url }}">Admin</a>
+        <a href="#">Apoyenos</a>
+    </div>
+{% endblock %}     

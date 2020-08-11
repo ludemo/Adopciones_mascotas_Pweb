@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block body%}
+    <h3>{{ objecto.nombres}}</h3>
+    <h3>{{ objecto.edad}}</h3>
+    <h3>{{ objecto.genero}}</h3>
+    <h3>{{ objecto.animal}}</h3>
+    <h3>{{ objecto.descripcion}}</h3>
+    <img src={{objecto.imagen.url}}>
+    <a href="{{url.adoptar}}"><button>Quiero adoptarlo</button></a>
+{% endblock%}

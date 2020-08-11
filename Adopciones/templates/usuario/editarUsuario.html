@@ -1,0 +1,13 @@
+ 
+{% extends 'base.html' %}
+{% block head%}
+  Editar Usuario
+{% endblock%}
+
+{% block body%}
+    <h2>Editando Usuario:</h2>
+    <form method = 'POST'> {% csrf_token %}
+        {{ form.as_p}}
+    <input type = 'submit' value ='Finalizar'/>
+    <a href="{{ url.index }} ">Retroceder</a>
+{% endblock%} 

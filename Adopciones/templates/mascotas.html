@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+    {% block head%}
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/estilos-galeria.css'%}">
+    {% endblock%}
+    {% block body%}
+    <div class="container">
+        {% for p in obj%}
+            <div class="item">
+                <a href ="{{p.get_absolute_url}}"><img src="{{p.imagen.url}}" class ="item-img"></a>
+                <div class ="item-text">
+                    <h3>{{ p.nombres }}</h3>
+                    <p>{{ p.descripcion }}</p>
+                </div>
+            </div>
+        {% endfor%}
+    </div>  
+{% endblock%}

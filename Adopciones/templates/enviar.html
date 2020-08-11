@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block head %}  
+{% endblock %}
+{% block body%}
+    <h1>Usted esta apunto de adoptar una mascota :3</h1>
+    {{ objeto.nombres}}<br>
+    {{ objeto.animal}}<br>
+    <h2>Por favor rellene los siguientes datos a continuación</h2>
+    <form  actions="#" method="POST">  
+        {% csrf_token %}
+        {{ form.as_p}}
+    <input type="submit" value="Enviar">
+{% endblock%}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block head %}  
+{% load staticfiles %}
+    <title>Adopciones</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css'%}">
+    <script src="js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <h1 class="titulo">Funciones-Usuario</h1>
+    <div class="botones">
+        <a href="{{ url.usuarioLista }}">Lista de Usuarios</a>
+        <a href="{{ url.mascotaCrear }}">Crear Mascotas</a>
+        <a href="{{ url.index }} ">Retroceder</a>
+    </div>    
+{% endblock %}

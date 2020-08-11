@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <h1> Detalles del Usuario </h1>
+{% endblock %}
+
+{% block body%}
+    <h3>{{ obj.nombre }}</h3>
+    <h3>{{ obj.apellido }}</h3>
+    <h3>{{ obj.direccion }}</h3>
+    <h3>{{ obj.correo }}</h3>
+    <h3>{{ obj.edad }}</h3>
+    <h3>{{ obj.telefono }}</h3>
+    <a href="{{ url.index }} ">Retroceder</a>
+{% endblock%}

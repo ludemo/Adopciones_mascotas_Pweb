@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block head%}
+  Lista de Usuarios
+{% endblock%}
+
+{% block body%}
+  <h1>Listado de Usuarios</h1>
+  {% for usu in obj %}
+    <div class="usuario">
+      {{ usu.id }} -
+      <a href="{{ usu.get_absolute_url }}">{{ usu.nombre }} {{ usu.apellido }}</a>
+      <a href="{{ usu.id }}/editar">Editar</a>
+      <a href="{{ usu.id }}/eliminar">Borrar</a>
+    </div>
+  {% endfor%}
+  <a href="{{ url.user }} ">Retroceder</a>
+{% endblock%}
