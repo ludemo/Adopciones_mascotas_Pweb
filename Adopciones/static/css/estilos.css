@@ -25,12 +25,13 @@ body {
 
 .botones{
     font-family: 'Lemonada', cursive;
-    font-size: 25px;
+    font-size: 30px;
     display:flex;
     justify-content: space-around;
 
 }
 .botones a{
+    font-size: 30px;
     margin:20px;
     text-decoration: none;
     color: #f2f2f2;

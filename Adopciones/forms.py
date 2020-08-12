@@ -102,13 +102,6 @@ class UsuarioForm(forms.ModelForm):
             return apellido
         else:
             raise forms.ValidationError('Debe colocar la primera letra en mayùscula')
-    def clean_direccion(self, *args, **kwargs):
-        print('paso: clean_direccion')
-        direccion = self.cleaned_data.get('direccion')
-        if direccion.istitle():
-            return direccion
-        else:
-            raise forms.ValidationError('Debe colocar la primera letra en mayùscula')
     def clean_correo(self, *args, **kwargs):#Falta
         print('paso: clean_correo')
         correo = self.cleaned_data.get('correo')
