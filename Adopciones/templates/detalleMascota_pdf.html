@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block body %}
+<style>
+body{
+    font-size:15px;
+}
+h1,table,.firma{
+    text-align:center;
+}
+</style>
+<h1>Adopciones "No eres tu, soy yo"</h1>
+<h2>Gracias por aceptar a este {{objeto.animal}}, en caso de ser aceptado presente este
+documento con sus datos en nuestras oficinas "av.CaminosDelWey 205"</h2>
+<h2>Nombres y Apellidos:_____________________________________  DNI:_______</h2>
+<br>
+<h2>Informacion de la mascota solicitada:</h2>
+<hr>
+<table border="1">
+    <tr>
+        <td><h2>Nombre</h2></td>
+        <td><h2>{{objeto.nombres}}</h2></td>
+    </tr>
+    <tr>
+        <td><h2>Edad</h2></td>
+        <td><h3>{{objeto.edad}}</h3></td>
+    </tr>
+    <tr>
+        <td><h2>animal</h2></td>
+        <td><h3>{{objeto.animal}}</h3></td>
+    </tr>
+    <tr>
+        <td><h2>genero</h2></td>
+        <td><h3>{{objeto.genero}}</h3></td>
+    </tr>
+    <tr>
+        <td><h2>descripcion</h2></td>
+        <td><h3>{{objeto.descripcion}}</h3></td>
+    </tr>
+</table>
+<hr>
+<br><br><br>
+<div class="firma">
+    <h2>________________<h2>
+    <h2>Firma del solicitante</h2>
+</div>
+{% endblock %} 

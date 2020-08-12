@@ -24,10 +24,10 @@ class UsuarioForm(forms.ModelForm):
             'telefono',
         ]
         widgets = {
-            'nombre':forms.TextInput(attrs={'placeholder':"Quijote",'class':'form-crontrol'}),
-            'apellido': forms.TextInput(attrs={'placeholder':"de la mancha",'class':'form-crontrol'}),
-            'direccion':forms.TextInput(attrs={'placeholder':"av.siempreViva",'class':'form-crontrol'}),
+            'nombre':forms.TextInput(attrs={'placeholder':"Quijote",'class':'form-control'}),
+            'apellido': forms.TextInput(attrs={'placeholder':"de la mancha",'class':'form-control'}),
+            'direccion':forms.TextInput(attrs={'placeholder':"av.siempreViva",'class':'form-control'}),
             'correo': forms.TextInput(attrs={'placeholder':"demo@example.com"}),
-            'edad':forms.TextInput(attrs={'class':'form-crontrol'}),
-            'telefono':forms.TextInput(attrs={'placeholder':"924417100",'class':'form-crontrol'}),
+            'edad':forms.TextInput(attrs={'class':'form-control'}),
+            'telefono':forms.TextInput(attrs={'placeholder':"924417100",'class':'form-control'}),
         }

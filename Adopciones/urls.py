@@ -10,6 +10,8 @@ from Adopciones.views import(
     eliminarUsuario,
     editarUsuario,
     enviar,
+    ListaMascotas_pdf,
+    DetalleMascota_pdf,
 )
 app_name = 'Adopciones'
 urlpatterns = [
@@ -23,4 +25,5 @@ urlpatterns = [
     path('usuarios/<int:myID>/eliminar', eliminarUsuario, name='eliminarUsuario'),
     path('usuarios/<int:myID>/editar', editarUsuario, name='editarUsuario'),
     path('<int:myID>/enviar',enviar),
+    path('<int:myID>/pdf/',DetalleMascota_pdf.as_view(),name = "detalles_pdf")
 ] 

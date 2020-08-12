@@ -39,4 +39,6 @@ class Direcciones():
         return "../"
     def user(self):
         return "../user/"
+    def pdf(self):
+        return "pdf"
     

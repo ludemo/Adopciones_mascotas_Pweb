@@ -1,10 +1,32 @@
 from django.shortcuts import render,get_object_or_404,redirect
+from django.views.generic import ListView,View
 from .models import Direcciones,Mascotas,Usuario
 from .forms import MascotasForm,UsuarioForm
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import get_template
 from django.conf import settings
+from django.http import HttpResponse
+from .utils import render_to_pdf
 # Create your views here.
+#Envio del pdf
+class ListaMascotas_pdf(ListView):
+    def get(self,request,*args,**kwargs):
+        mascotas = Mascotas.objects.all()
+        data={
+            'mascotas' :mascotas
+        }
+        pdf = render_to_pdf('mascotas_pdf.html',data)
+        return HttpResponse(pdf,content_type='application/pdf')   
+class DetalleMascota_pdf(View):
+    def get(self,request,*args,myID):
+            obj = get_object_or_404(Mascotas, id = myID)
+            context = {
+                'objeto':obj,
+            }
+            pdf = render_to_pdf('detalleMascota_pdf.html',context)
+            return HttpResponse(pdf,content_type='application/pdf')
+#Fin del envio del pdf
+#Empieza el envio de correos
 def  enviar(request,myID):
     form = UsuarioForm(request.POST)
     obj = get_object_or_404(Mascotas, id = myID)
@@ -33,11 +55,19 @@ def send_email(mail,obj):
     content = template.render(context)
     email.attach_alternative(content,"text/html")
     email.send()
+    ##Termina el envio de correos
 def Home(request):
     context = {
         "url":Direcciones
     }
     return render(request,'index.html',context)
+def DetallesMascotas(request,myID):
+    obj = get_object_or_404(Mascotas, id = myID)
+    context = {
+        'objecto':obj,
+        'url':Direcciones
+    }
+    return render(request,'detalles.html',context)
 def MascotasCreateView(request):
     form = MascotasForm(request.POST,files = request.FILES)
     if form.is_valid():
@@ -54,13 +84,6 @@ def ListaMascotas(request):
     "obj":obj
     }
     return render(request,"mascotas.html",context)
-def DetallesMascotas(request,myID):
-    obj = get_object_or_404(Mascotas, id = myID)
-    context = {
-        'objecto':obj,
-        'url':Direcciones
-    }
-    return render(request,'detalles.html',context)
 def listaUsuarios(request):
     obj = Usuario.objects.all()
     context = {
