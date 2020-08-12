@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    color:white;
+    text-align: center;
+    margin: 40px;
+    margin-bottom: 60px;
+    font-size: 50px;
+    font-family: 'Quicksand', sans-serif;
+}
+body{
+    background: #092756;
+	background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top,  rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg,  #670d10 0%, #092756 100%);
+	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
+	background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
+	background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
+	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #670d10 0%,#092756 100%);
+}
+.usuario{
+    background: #03001ea4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #fdeff962, #ec38bc80, #7403c07c, #03001e8f);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #fdeff98f, #ec38bc81, #7403c077, #03001e78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color:white;
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    padding:15px;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5em;
+    font-family: 'Quicksand', sans-serif;
+    background-color: rgba(64, 224, 208, 0.418);
+    width: 600px;
+}
+.usuario>a{
+    margin-right: 40px;
+    text-decoration: none;
+    margin-right: 40px;
+    color:white;
+}
+.usuario>a:hover{
+    color:rgb(230, 176, 176);
+}
+button{
+    margin-left: 100px;
+    margin:20px;
+    font-size: 20px;
+    padding: 20px;
+    border: none;
+    border-radius:15px;
+    background-color: rgba(225, 141, 233, 0.787);
+    transition: padding 0.2s;
+    color:white;
+    font-family: 'Quicksand', sans-serif;
+}
+button:hover{
+    padding: 22px;
+}
+.botones{
+    display: flex;
+    justify-content: center;
+}

@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 *{
     margin:0;
     padding: 0 ;
     box-sizing: border-box;
+}   
+body{
+    background: #2980B9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .container{
     max-width: 100%;
@@ -10,18 +16,52 @@
     grid-template-rows: repeat(3,auto);
     grid-gap:30px;
     margin:20px;
-    
+    height: 100vh;
+}
+.enunciado{
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    margin: 25px;
+    margin-bottom: 35px;
+    font-size: 1.25em;
+}
+.enunciado >a {
+    font-size: 1.9em;
+    text-decoration: none;
+}
+.enunciado >a:hover{
+    color: black;
 }
 .item{
     display:inline-block;
     margin:5px;
-    box-shadow: 1px -1px 36px 16px rgba(130,130,130,1);
+    box-shadow: 1px 1px 14px 6px rgba(0,0,0,0.75);
 }
 .item-img{
     width: 100%;
-    height: 70%;
+    height: 15em;
 }
 .item-text{
-    margin:5px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.25em;
+    text-align: center;
 }
+.opciones{
+    display: flex;
 
+}
+.opciones{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    font-family: 'Quicksand', sans-serif;
+}
+.opciones > a{
+    padding:10px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 14px 6px rgba(0,0,0,0.50);
+}
+.opciones>a:hover{
+    background-color: #1c92d2c2;;
+}

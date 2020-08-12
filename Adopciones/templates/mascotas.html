@@ -5,13 +5,17 @@
     <link rel="stylesheet" href="{% static 'css/estilos-galeria.css'%}">
     {% endblock%}
     {% block body%}
+    <div class ="enunciado">
+    <h2>¡Adopta una mascota! Encuentratu compañero ideal</h2>
+    <a href="../">Inicio</a>
+    </div>
     <div class="container">
         {% for p in obj%}
             <div class="item">
                 <a href ="{{p.get_absolute_url}}"><img src="{{p.imagen.url}}" class ="item-img"></a>
                 <div class ="item-text">
                     <h3>{{ p.nombres }}</h3>
-                    <p>{{ p.descripcion }}</p>
+                    <p>{{ p.edad}} años</p>
                 </div>
             </div>
         {% endfor%}

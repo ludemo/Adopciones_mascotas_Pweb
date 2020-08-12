@@ -1,13 +1,21 @@
 {% extends 'base.html' %}
-{% block head %}  
+{% block head %}
+    {% load staticfiles %}
+    <title>Usuario</title>
+    <link rel="stylesheet" href="{% static 'css/estilos-forms.css'%}">
 {% endblock %}
 {% block body%}
     <h1>Usted esta apunto de adoptar una mascota :3</h1>
-    {{ objeto.nombres}}<br>
-    {{ objeto.animal}}<br>
+    <div  class="enunciado" >
+    <h2>Datos de mascota escogida</h2>
+        <h3>Nombre :{{ objeto.nombres}}</h3>
+        <h3>Animal :{{ objeto.animal}}</h3><br>
+    </div>
     <h2>Por favor rellene los siguientes datos a continuación</h2>
-    <form  actions="#" method="POST">  
+    <form   method="POST">  
         {% csrf_token %}
         {{ form.as_p}}
-    <input type="submit" value="Enviar">
+    <input  type="submit" value="Enviar">
+    <a href="../">Retroceder</a>
+    </form>
 {% endblock%}

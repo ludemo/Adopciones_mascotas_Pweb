@@ -8,15 +8,7 @@ from django.conf import settings
 from django.http import HttpResponse
 from .utils import render_to_pdf
 # Create your views here.
-#Envio del pdf
-class ListaMascotas_pdf(ListView):
-    def get(self,request,*args,**kwargs):
-        mascotas = Mascotas.objects.all()
-        data={
-            'mascotas' :mascotas
-        }
-        pdf = render_to_pdf('mascotas_pdf.html',data)
-        return HttpResponse(pdf,content_type='application/pdf')   
+#Envio del pdf 
 class DetalleMascota_pdf(View):
     def get(self,request,*args,myID):
             obj = get_object_or_404(Mascotas, id = myID)
@@ -61,6 +53,7 @@ def Home(request):
         "url":Direcciones
     }
     return render(request,'index.html',context)
+#Mascotas
 def DetallesMascotas(request,myID):
     obj = get_object_or_404(Mascotas, id = myID)
     context = {
@@ -68,6 +61,21 @@ def DetallesMascotas(request,myID):
         'url':Direcciones
     }
     return render(request,'detalles.html',context)
+def ListaMascotas(request):
+    obj = Mascotas.objects.all()
+    context = {
+    "obj":obj
+    }
+    return render(request,"mascotas.html",context)
+#Fin Mascotas
+#Mascotas para Admin
+def ListaMascotas_admin(request):
+    obj = Mascotas.objects.all()
+    context = {
+    "obj":obj,
+    "url":Direcciones
+    }
+    return render(request,"mascota/listado_mascotas.html",context)
 def MascotasCreateView(request):
     form = MascotasForm(request.POST,files = request.FILES)
     if form.is_valid():
@@ -78,12 +86,50 @@ def MascotasCreateView(request):
         'url' :Direcciones,
     }
     return render(request,'usuario/createMascotas.html',context)
-def ListaMascotas(request):
-    obj = Mascotas.objects.all()
+def eliminarMascota(request, myID):
+    obj = get_object_or_404(Mascotas, id = myID)
+    if request.method == 'POST':
+        obj.delete()
+        return redirect('../')
     context = {
-    "obj":obj
+        'obj':obj,
+        "url":Direcciones,
     }
-    return render(request,"mascotas.html",context)
+    return render(request,'usuario/eliminar.html', context)
+def ActualizarDatos_Mascotas(request,myID):
+    obj = Mascotas.objects.get( id = myID)
+    form = MascotasForm(request.POST, instance=obj)
+    if form.is_valid():
+        form.save()
+        form = MascotasForm()
+    context = {
+        'form':form,
+        'url':Direcciones
+    }
+    return render(request,'mascota/actualizar_mascotas.html',context)
+#Fin de Mascotas para admin
+#Usuario
+def editarUsuario(request, myID):
+    obj = Usuario.objects.get(id = myID)
+    form = UsuarioForm(request.POST, instance=obj)
+    if form.is_valid():
+        form.save()
+        form = UsuarioForm()
+    context = {
+        'form' : form,
+        "url":Direcciones,
+    }
+    return render(request, 'usuario/editarUsuario.html', context)
+def eliminarUsuario(request, myID):
+    obj = get_object_or_404(Usuario, id = myID)
+    if request.method == 'POST':
+        obj.delete()
+        return redirect('../')
+    context = {
+        'obj':obj,
+        "url":Direcciones,
+    }
+    return render(request,'usuario/eliminar.html', context)
 def listaUsuarios(request):
     obj = Usuario.objects.all()
     context = {
@@ -98,29 +144,9 @@ def mostrarUsuario(request, myID):
         "url":Direcciones,
     }
     return render(request,'usuario/detallesUsuario.html', context)
-def eliminarUsuario(request, myID):
-    obj = get_object_or_404(Usuario, id = myID)
-    if request.method == 'POST':
-        obj.delete()
-        return redirect('../')
-    context = {
-        'obj':obj,
-        "url":Direcciones,
-    }
-    return render(request,'usuario/eliminarUsuario.html', context)
-def editarUsuario(request, myID):
-    obj = Usuario.objects.get(id = myID)
-    form = UsuarioForm(request.POST, instance=obj)
-    if form.is_valid():
-        form.save()
-        form = UsuarioForm()
-    context = {
-        'form' : form,
-        "url":Direcciones,
-    }
-    return render(request, 'usuario/editarUsuario.html', context)
 def user(request):
     context = {
         "url":Direcciones,
     }
     return render(request,'usuario/operacionesUsuario.html', context)
+#Fin Usuario

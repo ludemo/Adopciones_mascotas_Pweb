@@ -35,10 +35,13 @@ class Direcciones():
         return "../usuarios/"
     def mascotaCrear(self):
         return "crearMascota"
+    def ListaMascota(self):
+        return "ListaMascotas"
     def index(self):
         return "../"
-    def user(self):
-        return "../user/"
     def pdf(self):
         return "pdf"
+    def  user(self):
+        return "../user/"
+    
     

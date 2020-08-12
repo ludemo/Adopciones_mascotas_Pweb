@@ -1,9 +1,9 @@
- 
 {% extends 'base.html' %}
-{% block head%}
-  Editar Usuario
-{% endblock%}
-
+{% block head %}
+    {% load staticfiles %}
+    <title>Editar  usuario</title>
+    <link rel="stylesheet" href="{% static 'css/estilos-forms.css'%}">
+{% endblock %}
 {% block body%}
     <h2>Editando Usuario:</h2>
     <form method = 'POST'> {% csrf_token %}

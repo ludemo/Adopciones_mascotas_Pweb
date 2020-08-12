@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
+{% block head %}
+    {% load staticfiles %}
+    <title>Mascotas</title>
+    <link rel="stylesheet" href="{% static 'css/estilos-forms.css'%}">
+{% endblock %}
 {% block body%}
+    <h1>Añadir una mascota </h1>
     <form method = 'POST' enctype="multipart/form-data"> 
     {% csrf_token %}
     {{ form.as_p}}
     <input type = 'submit' value ='Grabar'/>
-     <a href="{{ url.user }} ">Retroceder</a>
+    <a href="../">Retroceder</a>
 {% endblock%} 
