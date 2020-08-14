@@ -128,6 +128,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 EMAIL_HOST  = 'smtp.googlemail.com'
 EMSAIL_POT = 587
-EMAIL_HOST_USER ='azevallosa@unsa.edu.pe'
-EMAIL_HOST_PASSWORD='HakunaMatataWe'
+EMAIL_HOST_USER ='correo'#Aquí ponga el correo de quien evniara los correos a los usuario
+EMAIL_HOST_PASSWORD='contraseña'#aquí su contraseña
 EMAIL_USE_TLS = True
